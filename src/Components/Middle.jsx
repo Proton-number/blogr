@@ -4,6 +4,7 @@ import laptopDesktop from "/src/images/illustration-laptop-desktop.svg";
 import laptopMobile from "/src/images/illustration-laptop-mobile.svg";
 import { motion } from "framer-motion";
 
+
 function Middle() {
   return (
     <Stack
