@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Typography, Stack, Button } from "@mui/material";
 import phoneDesktop from "/src/images/illustration-phones.svg";
-("/src/images/bg-pattern-circles.svg");
 import { motion } from "framer-motion";
 
 function State() {
