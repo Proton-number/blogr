@@ -137,10 +137,10 @@ function Top() {
       </Box>
 
       <Stack
-        component={motion.div} 
-        initial={{ opacity: 0, x:'-200px' }}
+        component={motion.div}
+        initial={{ opacity: 0, x: "-200px" }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{duration:.5}}
+        transition={{ duration: 0.5 }}
         spacing={{ xs: 3, sm: 1.6, lg: 2 }}
         sx={{
           textAlign: "center",
