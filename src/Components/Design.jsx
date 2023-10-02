@@ -1,13 +1,16 @@
 import React from "react";
 import { Box, Typography, Stack, Button } from "@mui/material";
 import editorDesktop from "/src/images/illustration-editor-desktop.svg";
-import editorMobile from "/src/images/illustration-editor-mobile.svg";
+import { motion } from "framer-motion";
 
 function Design() {
   return (
     <Box
       sx={{
         color: "hsl(200, 33%, 24%)",
+        padding: {
+          lg: "30px",
+        },
       }}
     >
       <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -17,9 +20,10 @@ function Design() {
       </Box>
 
       <Stack
-        direction={{ sm: "row", lg: "row" }}
+        direction={{ xs: "column", sm: "row", lg: "row" }}
         sx={{
           padding: {
+            xs: 6,
             sm: 6,
             lg: 8,
           },
@@ -34,7 +38,7 @@ function Design() {
             </Typography>
             <Typography
               variant="subtitle3"
-              sx={{ width: { sm: "100%", lg: "80%" } }}
+              sx={{ width: { xs: " 100%", sm: "100%", lg: "80%" } }}
             >
               Blogr features an exceedingly intuitive interface which lets you
               focus on one thing: creating content. The editor supports
@@ -50,7 +54,7 @@ function Design() {
             </Typography>
             <Typography
               variant="subtitle3"
-              sx={{ width: { sm: "100%", lg: "80%" } }}
+              sx={{ width: { xs: " 100%", sm: "100%", lg: "80%" } }}
             >
               Flexible content management enables users to easily move through
               posts. Increase the usability of your blog by adding customized
@@ -61,14 +65,20 @@ function Design() {
         </Stack>
 
         <Box
-          component="img"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          component={motion.img}
           src={editorDesktop}
           sx={{
-            width: {
-              sm: "380px",
-              lg: "800px",
+            marginBottom: {
+              xs: "40px",
             },
-            height: { lg: "700px" },
+            width: {
+              xs: "340px",
+              sm: "360px",
+              lg: "640px",
+            },
+            height: { lg: "600px" },
           }}
         />
       </Stack>

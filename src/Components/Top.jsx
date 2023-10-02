@@ -10,8 +10,8 @@ import {
   createTheme,
   ThemeProvider,
 } from "@mui/material";
-import desktopTop from "/src/images/bg-pattern-intro-desktop.svg";
-import mobileTop from "/src/images/bg-pattern-intro-mobile.svg";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { motion } from "framer-motion";
 
 function Top() {
   const theme = createTheme({
@@ -26,40 +26,87 @@ function Top() {
     <Box
       id="desktopTop"
       sx={{
+        marginTop: {
+          xs: "22px",
+          sm: 0,
+        },
         backgroundSize: {
+          xs: "600px",
           sm: "cover",
           lg: "cover",
         },
-        backgroundPosition: { sm: "300px", lg: "425px -635px" },
-        height: { sm: "20em", lg: "24em" },
+        backgroundPosition: {
+          xs: "40px 80px",
+          sm: "300px",
+          lg: "425px -635px",
+        },
+        height: { xs: "30em", sm: "20em", lg: "24em" },
       }}
     >
-      <Toolbar>
-        <Stack
-          direction="row"
-          spacing={{ sm: 28, lg: 100 }}
-          sx={{ padding: { lg: "20px" } }}
-        >
+      <Box
+        id="desktopNav"
+        sx={{
+          padding: { sm: "30px", lg: "30px" },
+        }}
+      >
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Stack
             direction="row"
             sx={{ alignItems: "center" }}
             spacing={{ sm: 4, lg: 6 }}
           >
-            <Typography variant="h4" component="h2" sx={{ flexGrow: 4 }}>
+            <Typography variant="h4" component="h2">
               <b>Blogr</b>
             </Typography>
 
             <Stack direction="row" spacing={{ sm: 3, lg: 6 }}>
-              <Typography variant="p" sx={{ flexGrow: 0.4 }}>
-                Product
-              </Typography>
+              <Stack
+                component={motion.div}
+                whileHover={{ y: -6 }}
+                direction="row"
+                sx={{ alignItems: "center" }}
+              >
+                <Typography sx={{ cursor: "pointer" }} variant="p">
+                  Product
+                </Typography>
+                <IconButton>
+                  <ThemeProvider theme={theme}>
+                    <ExpandMoreIcon color="primary" />
+                  </ThemeProvider>
+                </IconButton>
+              </Stack>
 
-              <Typography variant="p" sx={{ flexGrow: 0.4 }}>
-                Company
-              </Typography>
-              <Typography variant="p" sx={{ flexGrow: 0.4 }}>
-                Connect
-              </Typography>
+              <Stack
+                component={motion.div}
+                whileHover={{ y: -6 }}
+                direction="row"
+                sx={{ alignItems: "center" }}
+              >
+                <Typography sx={{ cursor: "pointer" }} variant="p">
+                  Company
+                </Typography>
+                <IconButton>
+                  <ThemeProvider theme={theme}>
+                    <ExpandMoreIcon color="primary" />
+                  </ThemeProvider>
+                </IconButton>
+              </Stack>
+
+              <Stack
+                component={motion.div}
+                whileHover={{ y: -6 }}
+                direction="row"
+                sx={{ alignItems: "center" }}
+              >
+                <Typography sx={{ cursor: "pointer" }} variant="p">
+                  Connect
+                </Typography>
+                <IconButton>
+                  <ThemeProvider theme={theme}>
+                    <ExpandMoreIcon color="primary" />
+                  </ThemeProvider>
+                </IconButton>
+              </Stack>
             </Stack>
           </Stack>
 
@@ -86,15 +133,20 @@ function Top() {
               </Button>
             </ThemeProvider>
           </Stack>
-        </Stack>
-      </Toolbar>
+        </Box>
+      </Box>
 
       <Stack
-        spacing={{ sm: 1.6, lg: 2 }}
+        component={motion.div} 
+        initial={{ opacity: 0, x:'-200px' }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{duration:.5}}
+        spacing={{ xs: 3, sm: 1.6, lg: 2 }}
         sx={{
+          textAlign: "center",
           justifyContent: "center",
           alignItems: "center",
-          padding: { sm: "28px", lg: "40px" },
+          padding: { xs: "50px", sm: "28px", lg: "40px" },
         }}
       >
         <Typography variant="h3">
@@ -105,7 +157,7 @@ function Top() {
 
         <Stack
           direction="row"
-          spacing={{ sm: 2, lg: 2 }}
+          spacing={{ xs: 2, sm: 2, lg: 2 }}
           sx={{ alignItems: "center" }}
         >
           <ThemeProvider theme={theme}>

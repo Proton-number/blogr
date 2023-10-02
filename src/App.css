@@ -7,6 +7,33 @@
 #state{
 background-image: url( "/src/images/bg-pattern-circles.svg");
 }
+
 body{
     margin:0;
 }
+
+
+#desktopNav{
+    display: none;
+  }
+  
+  
+  #mobileNav{
+    display: block;
+    }
+  
+ 
+  
+  @media screen and (min-width:600px) {
+      
+    #desktopNav{
+        display: block;
+    }
+  
+    #mobileNav{
+    display: none;
+    }
+    
+  
+  }
+  
