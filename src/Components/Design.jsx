@@ -3,6 +3,7 @@ import { Box, Typography, Stack, Button } from "@mui/material";
 import editorDesktop from "/src/images/illustration-editor-desktop.svg";
 import { motion } from "framer-motion";
 
+
 function Design() {
   return (
     <Box
