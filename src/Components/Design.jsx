@@ -31,7 +31,13 @@ function Design() {
           alignItems: "center",
         }}
       >
-        <Stack spacing={4}>
+        <Stack
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: .5 }}
+          component={motion.div}
+          spacing={4}
+        >
           <Stack spacing={3}>
             <Typography variant="h6">
               <b>Introducing an extensible editor</b>
@@ -67,7 +73,7 @@ function Design() {
         <Box
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
           component={motion.img}
           src={editorDesktop}
           sx={{
