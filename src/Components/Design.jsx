@@ -3,7 +3,6 @@ import { Box, Typography, Stack, Button } from "@mui/material";
 import editorDesktop from "/src/images/illustration-editor-desktop.svg";
 import { motion } from "framer-motion";
 
-
 function Design() {
   return (
     <Box
@@ -68,6 +67,7 @@ function Design() {
         <Box
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
           component={motion.img}
           src={editorDesktop}
           sx={{
